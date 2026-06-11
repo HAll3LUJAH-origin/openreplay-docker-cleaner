@@ -1,0 +1,4 @@
+FROM valkey/valkey:8.0-alpine
+RUN apk add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["valkey-server"]
